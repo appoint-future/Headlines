@@ -11,3 +11,13 @@ export const getArtListAPI = (id, time) => {
     },
   })
 }
+
+export const getAllChannelAPI = () => {
+  return axios.get('/v1_0/channels')
+}
+
+export const updateUserChannelAPI = (channels) => {
+  return axios.put('/v1_0/user/channels', {
+    channels,
+  })
+}
