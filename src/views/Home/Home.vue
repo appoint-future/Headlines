@@ -10,10 +10,10 @@
       </template>
     </van-nav-bar>
     <!-- 频道列表的标签页 -->
-    <van-tabs v-model="active" sticky offset-top="1.22666667rem">
-      <van-tab :title="item.name" v-for="item in userChannel" :key="item.id"
-        >{{ item.name }}</van-tab
-      >
+    <van-tabs v-model="active" sticky offset-top="46px">
+      <van-tab :title="item.name" v-for="item in userChannel" :key="item.id">
+        <ArtList :channel-id="item.id"></ArtList>
+      </van-tab>
     </van-tabs>
     <!-- 频道管理的小图标 -->
     <van-icon name="plus" size="16" class="plus" />
@@ -22,8 +22,12 @@
 
 <script>
 import { getUserChannelAPI } from '@/api/homeApi'
+import ArtList from '@/components/ArtList/ArtList.vue'
 export default {
   name: 'Home',
+  components: {
+    ArtList,
+  },
   data() {
     return {
       active: 0,
@@ -50,9 +54,6 @@ export default {
 .home-container {
   padding-top: 46px;
   padding-bottom: 50px;
-}
-.logo {
-  height: 80%;
 }
 /deep/.van-nav-bar {
   background-color: rgb(0, 98, 255);
