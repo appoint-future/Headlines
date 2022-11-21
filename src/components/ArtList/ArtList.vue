@@ -19,6 +19,7 @@
           v-for="item in artlist"
           :key="item.art_id"
           :article="item"
+          @remove-article="removeArticle"
         ></ArtItem>
       </van-list>
     </van-pull-refresh>
@@ -28,6 +29,7 @@
 <script>
 import { getArtListAPI } from '@/api/homeApi'
 import ArtItem from '@/components/ArtItem/ArtItem.vue'
+import { Toast } from 'vant'
 
 export default {
   name: 'ArtList',
@@ -76,6 +78,20 @@ export default {
     },
     onRefresh() {
       this.initArtList(true)
+    },
+    removeArticle(val) {
+      // 删除文章
+      this.artlist.some((item, index) => {
+        if (item.art_id === val) {
+          this.artlist.splice(index, 1)
+          return true
+        }
+      })
+      Toast('感谢您的反馈')
+      // 如果删除文章后artlist的长度小于10则主动发起请求
+      if (this.artlist.length < 10) {
+        this.initArtList()
+      }
     },
   },
   created() {
