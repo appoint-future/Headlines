@@ -66,7 +66,7 @@ export default {
         // 将信息保存到vuex中
         this.$store.commit('updateTokenInfo', res.data)
         // 跳转至首页
-        this.$router.push('/home')
+        this.$router.push('/main')
       }
     },
   },
