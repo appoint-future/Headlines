@@ -9,6 +9,7 @@ import Main from '@/views/Main/Main.vue'
 import User from '@/views/User/User.vue'
 import Search from '@/components/Search/Search.vue'
 import SearchResult from '@/components/Search/SearchResult.vue'
+import ArticleDetail from '@/views/ArticleDetail/ArticleDetail.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -24,6 +25,7 @@ const routes = [
   },
   { path: '/search', component: Search },
   { path: '/search/:keyword', component: SearchResult },
+  { path: '/article/:id', component: ArticleDetail },
 ]
 
 const router = new VueRouter({

@@ -1,7 +1,9 @@
 <template>
   <div class="artitem-container">
     <!-- 文章主体 -->
-    <van-cell>
+    <van-cell
+      @click="$router.push('/article/' + article.art_id)"
+    >
       <!-- 标题区域的插槽 -->
       <template #title>
         <div class="title-box">
