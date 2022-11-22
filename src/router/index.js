@@ -7,6 +7,8 @@ import Login from '@/components/Login/Login.vue'
 import Home from '@/views/Home/Home.vue'
 import Main from '@/views/Main/Main.vue'
 import User from '@/views/User/User.vue'
+import Search from '@/components/Search/Search.vue'
+import SearchResult from '@/components/Search/SearchResult.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -20,6 +22,8 @@ const routes = [
       { path: 'user', component: User },
     ],
   },
+  { path: '/search', component: Search },
+  { path: '/search/:keyword', component: SearchResult },
 ]
 
 const router = new VueRouter({

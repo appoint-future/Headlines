@@ -6,7 +6,7 @@
         <van-icon name="arrow-left" color="#fff" />
       </template>
       <template #right>
-        <van-icon name="search" size="18" color="#fff" />
+        <van-icon name="search" size="18" color="#fff" @click="search" />
       </template>
     </van-nav-bar>
     <!-- 频道列表的标签页 -->
@@ -120,7 +120,6 @@ import {
   updateUserChannelAPI,
 } from '@/api/homeApi'
 import ArtList from '@/components/ArtList/ArtList.vue'
-import { Toast } from 'vant'
 
 export default {
   name: 'Home',
@@ -208,6 +207,9 @@ export default {
         // 关闭弹窗
         this.show = false
       }
+    },
+    search() {
+      this.$router.push('/search')
     },
   },
   created() {
