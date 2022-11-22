@@ -76,6 +76,9 @@
         >
       </div>
     </div>
+
+    <!-- 评论区域 -->
+    <ArtCmd :source="id"></ArtCmd>
   </div>
 </template>
 
@@ -87,8 +90,13 @@ import {
   likingsArticleAPI,
   deletelikingsArticleAPI,
 } from '@/api/articlesApi'
+import ArtCmd from '@/components/ArtCmt/ArtCmt.vue'
+
 export default {
   name: 'ArticleDetail',
+  components: {
+    ArtCmd,
+  },
   data() {
     return {
       id: this.$route.params.id,
