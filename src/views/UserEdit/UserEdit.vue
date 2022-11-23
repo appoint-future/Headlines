@@ -126,7 +126,7 @@ export default {
     },
     // 获取到更新后的简介信息
     async updateUserName() {
-      const { data: res } = await updateUserNameAPI({ name: this.username })
+      const { data: res } = await updateUserAPI({ name: this.username })
       if (res.message === 'OK') {
         this.initUserProfile()
       }

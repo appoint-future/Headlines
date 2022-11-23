@@ -17,7 +17,17 @@ if (state) {
 
 export default new Vuex.Store({
   state: initState,
-  getters: {},
+  getters: {
+    // 获得用户头像
+    userAvatar(state) {
+      // 默认图片地址
+      let imgSrc = 'https://i.postimg.cc/y6MyKvkW/userImg.jpg'
+      if (state.userInfo.photo) {
+        imgSrc = state.userInfo.photo
+      }
+      return imgSrc
+    },
+  },
   mutations: {
     // 将获取到的token保存到tokeninfo中
     updateTokenInfo(state, token) {

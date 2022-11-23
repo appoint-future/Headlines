@@ -11,6 +11,7 @@ import Search from '@/components/Search/Search.vue'
 import SearchResult from '@/components/Search/SearchResult.vue'
 import ArticleDetail from '@/views/ArticleDetail/ArticleDetail.vue'
 import UserEdit from '@/views/UserEdit/UserEdit.vue'
+import Chat from '@/views/Chat/Chat.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -28,6 +29,7 @@ const routes = [
   { path: '/search/:keyword', component: SearchResult },
   { path: '/article/:id', component: ArticleDetail },
   { path: '/useredit', component: UserEdit },
+  { path: '/chat', component: Chat },
 ]
 
 const router = new VueRouter({

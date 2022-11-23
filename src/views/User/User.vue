@@ -6,7 +6,7 @@
       <van-cell>
         <!-- 使用 title 插槽来自定义标题 -->
         <template #icon>
-          <img :src="userInfo.photo" class="avatar" />
+          <img src="https://i.postimg.cc/y6MyKvkW/userImg.jpg" class="avatar" />
         </template>
         <template #title>
           <span class="username">{{ userInfo.name }}</span>
@@ -40,7 +40,12 @@
         is-link
         @click="$router.push('/useredit')"
       />
-      <van-cell icon="chat-o" title="小思同学" is-link />
+      <van-cell
+        icon="chat-o"
+        title="小思同学"
+        is-link
+        @click="$router.push('/chat')"
+      />
       <van-cell icon="warning-o" title="退出登录" is-link @click="logout" />
     </van-cell-group>
   </div>
