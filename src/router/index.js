@@ -3,15 +3,15 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Login from '@/components/Login/Login.vue'
-import Home from '@/views/Home/Home.vue'
-import Main from '@/views/Main/Main.vue'
-import User from '@/views/User/User.vue'
-import Search from '@/components/Search/Search.vue'
-import SearchResult from '@/components/Search/SearchResult.vue'
-import ArticleDetail from '@/views/ArticleDetail/ArticleDetail.vue'
-import UserEdit from '@/views/UserEdit/UserEdit.vue'
-import Chat from '@/views/Chat/Chat.vue'
+const Login = () => import('@/components/Login/Login.vue')
+const Home = () => import('@/views/Home/Home.vue')
+const Main = () => import('@/views/Main/Main.vue')
+const User = () => import('@/views/User/User.vue')
+const Search = () => import('@/components/Search/Search.vue')
+const SearchResult = () => import('@/components/Search/SearchResult.vue')
+const ArticleDetail = () => import('@/views/ArticleDetail/ArticleDetail.vue')
+const UserEdit = () => import('@/views/UserEdit/UserEdit.vue')
+const Chat = () => import('@/views/Chat/Chat.vue')
 
 const routes = [
   { path: '/', redirect: '/login' },
