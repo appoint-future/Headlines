@@ -66,7 +66,10 @@ export default {
         // 将信息保存到vuex中
         this.$store.commit('updateTokenInfo', res.data)
         // 跳转至首页
-        this.$router.push('/main')
+        // this.$route.query.pre 如果用户没有登录，要访问 /user 地址，则会强制跳转到 /login 登录页
+        // 当用户登录成功之后，应该自动跳转到用户刚才访问未遂的路由地址，即：登录成功之后，跳转到 /user
+        const navPath = this.$route.query.pre || '/main'
+        this.$router.replace(navPath)
       }
     },
   },
